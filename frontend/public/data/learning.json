@@ -11,7 +11,8 @@
             "duration": "12 min",
             "completed": false,
             "playing": true,
-            "type": "video"
+            "type": "video",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YE7VzlLtp-4"
           },
           {
             "id": "history-of-react",
@@ -19,7 +20,8 @@
             "duration": "15 min",
             "completed": true,
             "playing": false,
-            "type": "video"
+            "type": "video",
+            "youtubeUrl": "https://www.youtube.com/watch?v=YE7VzlLtp-4"
           },
           {
             "id": "setup-react",

@@ -1,5 +1,15 @@
 import mongoose from 'mongoose';
 
+// Define key concept schema
+const keyConceptSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  borderColor: String,
+  bgColor: String,
+  textColor: String,
+  descriptionColor: String
+});
+
 // Define the lesson schema
 const lessonSchema = new mongoose.Schema({
   id: String,
@@ -7,7 +17,13 @@ const lessonSchema = new mongoose.Schema({
   duration: String,
   completed: { type: Boolean, default: false },
   playing: { type: Boolean, default: false },
-  type: String // 'video' or 'document'
+  type: String, // 'video' or 'document'
+  youtubeUrl: String,
+  videoUrl: String,
+  content: {
+    introduction: String,
+    keyConcepts: [keyConceptSchema]
+  }
 });
 
 // Define module schema
@@ -19,16 +35,6 @@ const moduleSchema = new mongoose.Schema({
   activities: [String],
   assignment: String,
   activity: String
-});
-
-// Define key concept schema
-const keyConceptSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  borderColor: String,
-  bgColor: String,
-  textColor: String,
-  descriptionColor: String
 });
 
 // Define current lesson schema

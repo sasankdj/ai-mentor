@@ -364,47 +364,49 @@ export default function Learning() {
               />
             )}
 
-            {/* Video Controls */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-              <div className="flex items-center gap-4">
-                <button onClick={togglePlay} className="text-white hover:scale-110 transition-transform">
-                  {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
-                </button>
-
-                <div className="flex-1 flex items-center gap-2">
-                  <span className="text-white text-sm">{formatTime(currentTime)}</span>
-                  <div
-                    className="flex-1 h-1 bg-gray-600 rounded-lg cursor-pointer"
-                    onClick={handleSeek}
-                  >
-                    <div
-                      className="h-full bg-white rounded-lg"
-                      style={{ width: `${progress}%` }}
-                    ></div>
-                  </div>
-                  <span className="text-white text-sm">{formatTime(duration)}</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <button onClick={toggleMute} className="text-white hover:scale-110 transition-transform">
-                    {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+            {/* Video Controls - Only show for local videos, not YouTube */}
+            {!currentLesson?.youtubeUrl && (
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                <div className="flex items-center gap-4">
+                  <button onClick={togglePlay} className="text-white hover:scale-110 transition-transform">
+                    {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
                   </button>
-                  <input
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.1"
-                    value={volume}
-                    onChange={handleVolumeChange}
-                    className="w-20 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer range-sm accent-white"
-                  />
-                </div>
 
-                <button onClick={toggleFullscreen} className="text-white hover:scale-110 transition-transform">
-                  {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5" />}
-                </button>
+                  <div className="flex-1 flex items-center gap-2">
+                    <span className="text-white text-sm">{formatTime(currentTime)}</span>
+                    <div
+                      className="flex-1 h-1 bg-gray-600 rounded-lg cursor-pointer"
+                      onClick={handleSeek}
+                    >
+                      <div
+                        className="h-full bg-white rounded-lg"
+                        style={{ width: `${progress}%` }}
+                      ></div>
+                    </div>
+                    <span className="text-white text-sm">{formatTime(duration)}</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <button onClick={toggleMute} className="text-white hover:scale-110 transition-transform">
+                      {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                    </button>
+                    <input
+                      type="range"
+                      min="0"
+                      max="1"
+                      step="0.1"
+                      value={volume}
+                      onChange={handleVolumeChange}
+                      className="w-20 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer range-sm accent-white"
+                    />
+                  </div>
+
+                  <button onClick={toggleFullscreen} className="text-white hover:scale-110 transition-transform">
+                    {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5" />}
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Lesson Content */}

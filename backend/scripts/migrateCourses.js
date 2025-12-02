@@ -52,6 +52,14 @@ const migrateCourses = async () => {
               module.lessons = [];
             }
           }
+          // Add youtubeUrl to lessons if currentLesson has it
+          if (learningInfo.currentLesson?.youtubeUrl) {
+            for (const lesson of module.lessons) {
+              if (lesson.id === learningInfo.currentLesson.id) {
+                lesson.youtubeUrl = learningInfo.currentLesson.youtubeUrl;
+              }
+            }
+          }
         }
       }
 

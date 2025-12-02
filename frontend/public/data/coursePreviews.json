@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Generative AI & Machine Learning Fundamentals",
-      "subtitle": "Master UX Pilot, GPT-4, Midjourney, and 50+ AI tools to boost productivity and creativity",
+      "subtitle": "Master ChatGPT, Midjourney, and AI automation tools for next-gen productivity",
       "instructor": "Dr. Sarah Chen",
       "tags": ["Bestseller", "Beginner-Friendly", "AI-Generated Content"],
       "lastUpdated": "12/2024",
@@ -25,87 +25,73 @@
         "seconds": 10
       },
       "features": [
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/lifetimeaccess_icon.svg",
-          "text": "Lifetime access"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/mobile.svg",
-          "text": "Access on mobile and desktop"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/certificate.svg",
-          "text": "Certificate of completion"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/moneyback.svg",
-          "text": "30-day money-back guarantee"
-        }
+        { "icon": "AI_Tutor_New_UI/Course_Preview/lifetimeaccess_icon.svg", "text": "Lifetime access" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/mobile.svg", "text": "Access on mobile and desktop" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/certificate.svg", "text": "Certificate of completion" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/moneyback.svg", "text": "30-day money-back guarantee" }
       ],
       "whatYouLearn": [
-        "Master UX Pilot for content creation and automation",
-        "Create stunning visuals with Midjourney and DALL-E",
-        "Build AI-powered workflows and automations",
-        "Understand prompt engineering best practices",
-        "Explore 50+ AI tools for different industries",
-        "Implement AI in business and personal projects"
+        "Understand AI, Generative AI, and Machine Learning fundamentals",
+        "Build AI-generated images, text, and workflows using GPT and Midjourney",
+        "Learn prompt engineering best practices",
+        "Use 50+ AI tools for creative and business automation",
+        "Train basic ML models and understand how AI models work",
+        "Integrate AI tools into real-world projects"
       ],
       "curriculum": [
         {
-          "title": "Module 1: Foundations of UX Design",
-          "goal": "Understand the core principles, history, and value of UX design.",
+          "title": "Module 1: Introduction to AI & Machine Learning",
+          "goal": "Understand the foundations of AI and how machines learn from data.",
           "topics": [
-            "What is UX? History and evolution",
-            "Difference between UX and UI",
-            "UX vs CX vs Service Design",
-            "Design Thinking & Human-Centered Design",
-            "UX Roles & Career Paths"
+            "What is AI? Evolution and Applications",
+            "Machine Learning vs Deep Learning",
+            "Supervised vs Unsupervised Learning",
+            "Neural Networks overview",
+            "AI Ethics and Limitations"
           ],
           "activities": [
-            "Industry case study breakdown",
-            "Quiz: UX vs UI vs Product Design",
-            "Assignment: Identify good vs bad UX examples"
+            "Case study: ChatGPT and Midjourney explained",
+            "Quiz: AI vs ML concepts"
           ]
         },
         {
-          "title": "🎨 Module 2: UX Research & Empathy",
-          "goal": "Build the skill of understanding users through qualitative and quantitative research.",
+          "title": "Module 2: Generative AI in Action",
+          "goal": "Explore text, image, and video generation tools and their workflows.",
           "topics": [
-            "User Research Methods (interviews, surveys, analytics)",
-            "Empathy Mapping",
-            "Creating Personas",
-            "User Journey Mapping",
-            "Problem Statements and How Might We"
+            "Prompt Engineering Techniques",
+            "Using ChatGPT, Claude, and Gemini",
+            "Image generation with Midjourney and DALL·E",
+            "AI Video and Music Generation Tools",
+            "Automation using Zapier and Make"
           ],
           "tools": [
-            "Google Forms / Typeform",
-            "Useberry",
-            "AI Persona generators (UXPin, Userforge AI)"
+            "ChatGPT, Midjourney, DALL·E",
+            "Runway ML, Synthesia",
+            "Zapier, Make.com"
           ],
-          "assignment": "Create personas from real/fictional user interviews"
+          "assignment": "Design an AI-generated marketing campaign"
         },
         {
-          "title": "🧪 Module 3: Information Architecture & Wireframing",
-          "goal": "Learn how to structure content and create low-fidelity designs.",
+          "title": "Module 3: Building AI-Powered Projects",
+          "goal": "Apply Generative AI and ML concepts in real projects.",
           "topics": [
-            "Card Sorting & Sitemap Design",
-            "Wireframes: Low vs High Fidelity",
-            "Navigation Patterns & Interaction Models",
-            "Sketching Techniques"
+            "Integrating GPT APIs in apps",
+            "Building no-code AI automations",
+            "Creating a personal AI assistant",
+            "Deploying AI tools for business use"
           ],
           "tools": [
-            "Figma",
-            "Miro",
-            "Whimsical (AI for quick flows)"
+            "OpenAI API",
+            "Notion AI, Replit, Zapier"
           ],
-          "activity": "Build a wireframe using Figma & AI plugin"
+          "activity": "Build a personalized AI chatbot"
         }
       ]
     },
     {
       "id": 2,
       "title": "Full Stack Web Development",
-      "subtitle": "Build complete web applications from front-end to back-end using modern technologies",
+      "subtitle": "Build complete web applications using React, Node.js, and modern databases",
       "instructor": "Prof. Michael Johnson",
       "tags": ["Popular", "Hands-On", "Job-Ready"],
       "lastUpdated": "11/2024",
@@ -127,85 +113,64 @@
         "seconds": 45
       },
       "features": [
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/lifetimeaccess_icon.svg",
-          "text": "Lifetime access"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/mobile.svg",
-          "text": "Access on mobile and desktop"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/certificate.svg",
-          "text": "Certificate of completion"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/moneyback.svg",
-          "text": "30-day money-back guarantee"
-        }
+        { "icon": "AI_Tutor_New_UI/Course_Preview/lifetimeaccess_icon.svg", "text": "Lifetime access" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/mobile.svg", "text": "Access on mobile and desktop" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/certificate.svg", "text": "Certificate of completion" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/moneyback.svg", "text": "30-day money-back guarantee" }
       ],
       "whatYouLearn": [
         "Master HTML, CSS, and JavaScript fundamentals",
-        "Build responsive front-end with React",
-        "Develop back-end APIs with Node.js and Express",
-        "Work with databases (MongoDB, PostgreSQL)",
-        "Deploy applications to cloud platforms",
+        "Build responsive front-ends using React",
+        "Develop REST APIs with Node.js and Express",
+        "Manage data using MongoDB and PostgreSQL",
+        "Deploy full-stack apps to the cloud",
         "Implement authentication and security"
       ],
       "curriculum": [
         {
-          "title": "Module 1: HTML & CSS Foundations",
-          "goal": "Learn the building blocks of web development.",
+          "title": "Module 1: Front-End Foundations",
+          "goal": "Build beautiful, responsive user interfaces.",
           "topics": [
-            "HTML5 semantic elements",
-            "CSS3 styling and layouts",
-            "Responsive design with media queries",
-            "Flexbox and Grid systems"
+            "HTML5 & CSS3 basics",
+            "Responsive layouts with Flexbox & Grid",
+            "JavaScript ES6+ fundamentals",
+            "DOM Manipulation & Event Handling"
           ],
           "activities": [
             "Build a personal portfolio website",
-            "Create responsive layouts",
-            "CSS animations and transitions"
+            "Interactive landing page project"
           ]
         },
         {
-          "title": "Module 2: JavaScript & DOM Manipulation",
-          "goal": "Master JavaScript programming and browser interactions.",
+          "title": "Module 2: React Framework",
+          "goal": "Create dynamic front-ends using modern React tools.",
           "topics": [
-            "ES6+ features and syntax",
-            "DOM manipulation and events",
-            "Asynchronous programming (Promises, Async/Await)",
-            "API integration with fetch"
+            "React Components and Hooks",
+            "State and Props management",
+            "Routing and Navigation",
+            "React Context and Redux Toolkit"
           ],
-          "tools": [
-            "VS Code",
-            "Browser DevTools",
-            "Postman for API testing"
-          ],
-          "assignment": "Build an interactive todo application"
+          "tools": ["React DevTools", "Vite", "Redux Toolkit"],
+          "activity": "Develop an e-commerce frontend"
         },
         {
-          "title": "Module 3: React Framework",
-          "goal": "Build modern front-end applications with React.",
+          "title": "Module 3: Back-End & Database",
+          "goal": "Build secure and scalable server-side applications.",
           "topics": [
-            "Component-based architecture",
-            "State management with hooks",
-            "Routing with React Router",
-            "Form handling and validation"
+            "Node.js and Express Basics",
+            "REST API Development",
+            "Database Integration (MongoDB & PostgreSQL)",
+            "Authentication with JWT"
           ],
-          "tools": [
-            "React DevTools",
-            "Create React App",
-            "Redux Toolkit"
-          ],
-          "activity": "Develop a complete e-commerce frontend"
+          "tools": ["Postman", "MongoDB Compass", "Railway.app"],
+          "assignment": "Build a full-stack CRUD application"
         }
       ]
     },
     {
       "id": 3,
       "title": "Data Analytics Masterclass",
-      "subtitle": "Transform raw data into actionable insights using Python and modern analytics tools",
+      "subtitle": "Transform raw data into actionable insights using Python, SQL, and BI tools",
       "instructor": "Dr. Emily Rodriguez",
       "tags": ["Advanced", "Data-Driven", "Industry-Relevant"],
       "lastUpdated": "10/2024",
@@ -227,85 +192,60 @@
         "seconds": 30
       },
       "features": [
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/lifetimeaccess_icon.svg",
-          "text": "Lifetime access"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/mobile.svg",
-          "text": "Access on mobile and desktop"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/certificate.svg",
-          "text": "Certificate of completion"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/moneyback.svg",
-          "text": "30-day money-back guarantee"
-        }
+        { "icon": "AI_Tutor_New_UI/Course_Preview/lifetimeaccess_icon.svg", "text": "Lifetime access" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/mobile.svg", "text": "Access on mobile and desktop" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/certificate.svg", "text": "Certificate of completion" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/moneyback.svg", "text": "30-day money-back guarantee" }
       ],
       "whatYouLearn": [
-        "Data cleaning and preprocessing",
-        "Statistical analysis and hypothesis testing",
-        "Data visualization with Python libraries",
-        "Machine learning for predictive analytics",
-        "Big data processing with Spark",
-        "Business intelligence and reporting"
+        "Perform data cleaning and preprocessing",
+        "Conduct statistical analysis and hypothesis testing",
+        "Visualize data using Matplotlib, Seaborn, and Power BI",
+        "Use SQL for data extraction and manipulation",
+        "Build dashboards and data stories",
+        "Apply predictive analytics and ML models"
       ],
       "curriculum": [
         {
-          "title": "Module 1: Data Fundamentals",
-          "goal": "Understand data types, sources, and basic manipulation.",
+          "title": "Module 1: Data Fundamentals & Python",
+          "goal": "Learn how to collect, clean, and analyze data with Python.",
           "topics": [
             "Data types and structures",
-            "Data collection methods",
-            "Data quality assessment",
-            "Basic data cleaning techniques"
+            "Data wrangling with pandas",
+            "Missing data handling",
+            "Basic data visualization"
           ],
-          "activities": [
-            "Analyze a real-world dataset",
-            "Create data quality reports",
-            "Build data cleaning pipelines"
-          ]
+          "activities": ["Clean a real dataset", "Visualize key metrics using Python"]
         },
         {
-          "title": "Module 2: Statistical Analysis",
-          "goal": "Apply statistical methods to extract insights from data.",
+          "title": "Module 2: SQL & Statistical Analysis",
+          "goal": "Extract and analyze insights using SQL and statistics.",
           "topics": [
-            "Descriptive statistics",
-            "Inferential statistics",
-            "Hypothesis testing",
+            "SQL queries, joins, and aggregations",
+            "Descriptive and inferential statistics",
             "Correlation and regression analysis"
           ],
-          "tools": [
-            "Python (pandas, numpy)",
-            "Jupyter Notebook",
-            "Statistical software packages"
-          ],
-          "assignment": "Conduct a complete statistical analysis on a dataset"
+          "tools": ["Python", "MySQL", "Jupyter Notebook"],
+          "assignment": "Analyze a dataset using SQL and Python"
         },
         {
-          "title": "Module 3: Data Visualization & Reporting",
-          "goal": "Create compelling visualizations and reports.",
+          "title": "Module 3: Data Visualization & BI Tools",
+          "goal": "Create interactive reports and dashboards.",
           "topics": [
-            "Chart types and best practices",
-            "Interactive dashboards",
-            "Storytelling with data",
-            "Business intelligence tools"
+            "Visualization best practices",
+            "Building interactive dashboards",
+            "Storytelling with Data",
+            "Introduction to Power BI & Tableau"
           ],
-          "tools": [
-            "Matplotlib, Seaborn",
-            "Tableau, Power BI",
-            "Plotly for interactive charts"
-          ],
-          "activity": "Build a comprehensive analytics dashboard"
+          "tools": ["Tableau", "Power BI", "Plotly"],
+          "activity": "Build a data-driven business dashboard"
         }
       ]
     },
     {
       "id": 4,
       "title": "Machine Learning Fundamentals",
-      "subtitle": "Learn the core concepts and algorithms of machine learning from scratch",
+      "subtitle": "Understand and implement key ML algorithms from scratch using Python",
       "instructor": "Dr. Alex Chen",
       "tags": ["AI", "Mathematics", "Practical"],
       "lastUpdated": "09/2024",
@@ -327,79 +267,51 @@
         "seconds": 20
       },
       "features": [
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/lifetimeaccess_icon.svg",
-          "text": "Lifetime access"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/mobile.svg",
-          "text": "Access on mobile and desktop"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/certificate.svg",
-          "text": "Certificate of completion"
-        },
-        {
-          "icon": "AI_Tutor_New_UI/Course_Preview/moneyback.svg",
-          "text": "30-day money-back guarantee"
-        }
+        { "icon": "AI_Tutor_New_UI/Course_Preview/lifetimeaccess_icon.svg", "text": "Lifetime access" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/mobile.svg", "text": "Access on mobile and desktop" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/certificate.svg", "text": "Certificate of completion" },
+        { "icon": "AI_Tutor_New_UI/Course_Preview/moneyback.svg", "text": "30-day money-back guarantee" }
       ],
       "whatYouLearn": [
-        "Understand machine learning fundamentals",
-        "Implement supervised learning algorithms",
-        "Work with unsupervised learning techniques",
-        "Model evaluation and validation",
-        "Deep learning basics with neural networks",
-        "Real-world ML project implementation"
+        "Understand core ML concepts and types of learning",
+        "Implement key supervised and unsupervised algorithms",
+        "Evaluate and optimize models",
+        "Explore deep learning fundamentals",
+        "Apply ML to real-world datasets"
       ],
       "curriculum": [
         {
           "title": "Module 1: ML Foundations",
-          "goal": "Grasp the core concepts of machine learning.",
+          "goal": "Build a strong understanding of machine learning principles.",
           "topics": [
-            "What is Machine Learning?",
-            "Types of ML (Supervised, Unsupervised, Reinforcement)",
-            "Bias-Variance Tradeoff",
-            "Model evaluation metrics"
+            "Types of ML algorithms",
+            "Training vs Testing data",
+            "Evaluation metrics",
+            "Bias-Variance tradeoff"
           ],
-          "activities": [
-            "Implement basic algorithms from scratch",
-            "Compare different ML approaches",
-            "Evaluate model performance"
-          ]
+          "activities": ["Implement a simple linear regression model", "Compare accuracy of algorithms"]
         },
         {
           "title": "Module 2: Supervised Learning",
-          "goal": "Master algorithms for prediction and classification.",
+          "goal": "Learn predictive modeling for regression and classification.",
           "topics": [
-            "Linear Regression",
-            "Logistic Regression",
-            "Decision Trees and Random Forests",
-            "Support Vector Machines",
-            "Neural Networks basics"
+            "Linear and Logistic Regression",
+            "Decision Trees & Random Forests",
+            "Support Vector Machines"
           ],
-          "tools": [
-            "Scikit-learn",
-            "TensorFlow/Keras",
-            "Jupyter Notebook"
-          ],
-          "assignment": "Build a predictive model for a real dataset"
+          "tools": ["Scikit-learn", "Pandas", "Jupyter Notebook"],
+          "assignment": "Predict housing prices using regression models"
         },
         {
-          "title": "Module 3: Unsupervised Learning",
-          "goal": "Discover patterns in unlabeled data.",
+          "title": "Module 3: Unsupervised & Deep Learning",
+          "goal": "Discover patterns and explore neural networks.",
           "topics": [
-            "Clustering algorithms (K-means, Hierarchical)",
-            "Dimensionality reduction (PCA, t-SNE)",
-            "Association rule mining",
-            "Anomaly detection"
+            "Clustering (K-means, Hierarchical)",
+            "Dimensionality Reduction (PCA)",
+            "Introduction to Neural Networks"
           ],
-          "tools": [
-            "Scikit-learn",
-            "TensorFlow/Keras",
-            "Jupyter Notebook"
-          ],
-          "activity": "Implement clustering on customer data"
+          "tools": ["TensorFlow", "Keras"],
+          "activity": "Build an image classification model"
         }
       ]
     }
