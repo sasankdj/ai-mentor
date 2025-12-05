@@ -38,6 +38,7 @@ export default function Learning() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   const videoRef = useRef(null);
   const playerContainerRef = useRef(null);
@@ -106,10 +107,76 @@ export default function Learning() {
     }
   };
 
-  const handleNext = () => {
-    if (currentLessonIndex < allLessons.length - 1) {
+  const completeLesson = async (lessonId) => {
+    // Check if lesson is already completed
+    const courseProgress = user?.purchasedCourses?.find(course => course.courseId === parseInt(courseId))?.progress;
+    const isAlreadyCompleted = courseProgress?.completedLessons?.some(cl => cl.lessonId === lessonId);
+
+    if (isAlreadyCompleted) {
+      console.log('Lesson already completed, skipping');
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch('http://localhost:5000/api/users/course-progress', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          courseId: parseInt(courseId),
+          completedLessons: [lessonId],
+        }),
+      });
+
+      if (response.ok) {
+        // Update user context with new progress
+        const updatedUser = {
+          ...user,
+          purchasedCourses: user.purchasedCourses.map(course =>
+            course.courseId === parseInt(courseId)
+              ? {
+                  ...course,
+                  progress: {
+                    ...course.progress,
+                    completedLessons: [
+                      ...(course.progress.completedLessons || []),
+                      { lessonId: lessonId, completedAt: new Date() }
+                    ]
+                  }
+                }
+              : course
+          )
+        };
+        updateUser(updatedUser);
+      }
+    } catch (error) {
+      console.error('Error updating progress:', error);
+    }
+  };
+
+  const handleNext = async () => {
+    console.log('handleNext called, currentLessonIndex:', currentLessonIndex, 'allLessons.length:', allLessons.length);
+    if (currentLessonIndex >= allLessons.length - 1 || isNavigating) {
+      console.log('handleNext blocked - at end or navigating');
+      return;
+    }
+
+    setIsNavigating(true);
+    try {
+      console.log('Completing lesson:', currentLesson.id);
+      // Complete the current lesson
+      await completeLesson(currentLesson.id);
+
       const nextLesson = allLessons[currentLessonIndex + 1];
-      handleLessonClick(nextLesson);
+      console.log('Navigating to next lesson:', nextLesson.id);
+      await handleLessonClick(nextLesson);
+    } catch (error) {
+      console.error('Error navigating to next lesson:', error);
+    } finally {
+      setIsNavigating(false);
     }
   };
 
@@ -118,12 +185,27 @@ export default function Learning() {
   };
 
   const handleLessonClick = async (lesson) => {
+    // Pause current video and reset state
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+    setIsPlaying(false);
+    setProgress(0);
+    setCurrentTime(0);
+    setDuration(0);
+
     // Update current lesson in learning data
     const updatedLearningData = {
       ...learningData,
       currentLesson: lesson
     };
     setLearningData(updatedLearningData);
+
+    // Force video reload if it's a local video
+    if (videoRef.current && lesson.videoUrl) {
+      videoRef.current.load();
+    }
 
     // Update progress on backend
     try {
@@ -232,13 +314,23 @@ export default function Learning() {
           </div>
 
           <div className="mb-6">
-          <div className="w-full bg-gray-200 rounded-full h-2">
-              <div
-                className="bg-blue-600 h-2 rounded-full"
-                style={{ width: `${user?.purchasedCourses?.find(course => course.courseId === parseInt(courseId))?.progress?.completedLessons?.length || 0}%` }}
-              ></div>
-            </div>
-            <p className="text-sm text-gray-600 mt-2">{user?.purchasedCourses?.find(course => course.courseId === parseInt(courseId))?.progress?.completedLessons?.length || 0}% Complete</p>
+            {(() => {
+              const completedCount = user?.purchasedCourses?.find(course => course.courseId === parseInt(courseId))?.progress?.completedLessons?.length || 0;
+              const totalCount = allLessons.length;
+              const progressPercent = Math.min((completedCount / totalCount) * 100, 100);
+              console.log('Progress calculation:', { completedCount, totalCount, progressPercent });
+              return (
+                <>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      className="bg-blue-600 h-2 rounded-full"
+                      style={{ width: `${progressPercent}%` }}
+                    ></div>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-2">{Math.round(progressPercent)}% Complete</p>
+                </>
+              );
+            })()}
           </div>
 
           <div className="space-y-2">
@@ -301,6 +393,7 @@ export default function Learning() {
           >
             {currentLesson?.youtubeUrl ? (
               <iframe
+                key={currentLesson.id}
                 src={`https://www.youtube.com/embed/${getYouTubeVideoId(currentLesson.youtubeUrl)}`}
                 className="w-full h-full"
                 frameBorder="0"
@@ -310,6 +403,7 @@ export default function Learning() {
               ></iframe>
             ) : (
               <video
+                key={currentLesson.id}
                 ref={videoRef}
                 src={currentLesson?.videoUrl}
                 className="w-full h-full object-cover"
@@ -317,49 +411,6 @@ export default function Learning() {
                 onLoadedMetadata={handleProgress}
                 onEnded={() => {
                   setIsPlaying(false);
-                  // Mark lesson as completed and update analytics
-                  const token = localStorage.getItem('token');
-                  fetch('http://localhost:5000/api/users/course-progress', {
-                    method: 'PUT',
-                    headers: {
-                      'Content-Type': 'application/json',
-                      'Authorization': `Bearer ${token}`,
-                    },
-                    body: JSON.stringify({
-                      courseId: parseInt(courseId),
-                      completedLessons: [currentLesson.id],
-                    }),
-                  }).then(response => {
-                    if (response.ok) {
-                      // Update user context with new progress
-                      const updatedUser = {
-                        ...user,
-                        purchasedCourses: user.purchasedCourses.map(course =>
-                          course.courseId === parseInt(courseId)
-                            ? {
-                                ...course,
-                                progress: {
-                                  ...course.progress,
-                                  completedLessons: [
-                                    ...(course.progress.completedLessons || []),
-                                    { lessonId: currentLesson.id, completedAt: new Date() }
-                                  ]
-                                }
-                              }
-                            : course
-                        )
-                      };
-                      updateUser(updatedUser);
-
-                      // Auto-advance to next lesson if available
-                      if (currentLessonIndex < allLessons.length - 1) {
-                        const nextLesson = allLessons[currentLessonIndex + 1];
-                        setTimeout(() => {
-                          handleLessonClick(nextLesson);
-                        }, 1000); // Small delay to show completion
-                      }
-                    }
-                  }).catch(error => console.error('Error updating progress:', error));
                 }}
               />
             )}
@@ -443,10 +494,10 @@ export default function Learning() {
 
               <button
                 onClick={handleNext}
-                disabled={currentLessonIndex >= allLessons.length - 1}
+                disabled={currentLessonIndex >= allLessons.length - 1 || isNavigating}
                 className="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium shadow-lg hover:bg-blue-700 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Next
+                {isNavigating ? 'Loading...' : 'Next'}
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
